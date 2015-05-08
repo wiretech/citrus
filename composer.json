@@ -1,0 +1,23 @@
+{
+    "name": "wiretech/orange-juice",
+    "description": "",
+    "authors": [
+        {
+            "name": "Noah Gansallo",
+            "email": "noah.gansallo@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-0": {
+            "Wiretech\\OrangeJuice\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

@@ -30,7 +30,7 @@ class OrangeJuiceServiceProvider extends ServiceProvider {
 	{
 		$this->app->bind('OrangeJuice', function()
         {
-            return new \Wiretech\OrangeJuice\Classes\ApiResponse;
+            return new \Wiretech\OrangeJuice\Classes\Citrus;
         });
 	}
 

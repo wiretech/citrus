@@ -2,7 +2,7 @@
 
 namespace Wiretech\OrangeJuice\Classes;
 
-class ApiResponse {
+class Citrus {
 
     public static function response($success = false, $error = 'An unkown error occured', $data = null)
     {

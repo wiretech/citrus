@@ -4,7 +4,7 @@ namespace Wiretech\Citrus\Classes;
 
 class Citrus {
 
-    public static function response($success = false, $error = 'An unkown error occured', $data = null)
+    public static function response($success = 0, $error = 'An unkown error occured', $data = null)
     {
 
         $response['succes'] = $success;
@@ -15,34 +15,28 @@ class Citrus {
         return $response;
     }
 
-    public static function build()
+    private static function build()
     {
         $data = array();
 
-    	$args = func_num_args();
+        $array = func_get_arg(0);
 
-        $argDecider = 0;
+        foreach ($array as $index => $value) {
 
-        $argDecider_ = 1;
-
-        for ($i=0; $i < $args/2; $i++) { 
-            
-            $index = func_get_arg($argDecider);
-            $object = func_get_arg($argDecider_);
-
-            if(!is_object($object))
-            {
-                $data[$index] = $object;
-            } else{
-                $data[$index] = json_decode(json_encode($object), true);
-            }
-
-            $argDecider_ = $argDecider_ + 2;
-            $argDecider = $argDecider + 2;
-            
+           $data[$index] = json_decode(json_encode($value), true);
         }
 
         return $data;
     }
+
+    public static function combine()
+    {
+        $arg = func_get_arg(0);
+        $data = Citrus::build($arg);
+        $response = Citrus::response(1, null, $data);
+        return $response;
+    }
+
+
 
 }

@@ -28,9 +28,9 @@ class CitrusServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-		$this->app->bind('OrangeJuice', function()
+		$this->app->bind('Citrus', function()
         {
-            return new \Wiretech\OrangeJuice\Classes\Citrus;
+            return new \Wiretech\Citrus\Classes\Citrus;
         });
 	}
 

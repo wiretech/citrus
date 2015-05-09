@@ -1,5 +1,5 @@
 {
-    "name": "wiretech/orange-juice",
+    "name": "wiretech/Citrus",
     "description": "",
     "authors": [
         {
@@ -10,7 +10,7 @@
     "homepage": "http://wiretech.github.io/",
     "time": "2015-05-08",
     "license":"MIT",
-    "version": "0.5.1",
+    "version": "0.6",
     "require": {
         "php": ">=5.4.0",
         "illuminate/support": "4.2.*"
@@ -20,7 +20,7 @@
             "src/migrations"
         ],
         "psr-0": {
-            "Wiretech\\OrangeJuice\\": "src/"
+            "Wiretech\\Citrus\\": "src/"
         }
     },
     "minimum-stability": "stable"

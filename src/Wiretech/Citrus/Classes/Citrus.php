@@ -1,6 +1,6 @@
 <?php 
 
-namespace Wiretech\OrangeJuice\Classes;
+namespace Wiretech\Citrus\Classes;
 
 class Citrus {
 

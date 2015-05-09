@@ -2,7 +2,7 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class OrangeJuiceServiceProvider extends ServiceProvider {
+class CitrusServiceProvider extends ServiceProvider {
 
 	/**
 	 * Indicates if loading of the provider is deferred.
@@ -18,7 +18,7 @@ class OrangeJuiceServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-		$this->package('wiretech/orange-juice');
+		$this->package('wiretech/citrus');
 	}
 
 	/**

@@ -1,6 +1,6 @@
 <?php 
 
-namespace Wiretech\OrangeJuice\Facades;
+namespace Wiretech\Citrus\Facades;
 
 use Illuminate\Support\Facades\Facade;
 

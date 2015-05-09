@@ -1,4 +1,4 @@
-<?php namespace Wiretech\OrangeJuice;
+<?php namespace Wiretech\Citrus;
 
 use Illuminate\Support\ServiceProvider;
 

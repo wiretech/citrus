@@ -15,11 +15,9 @@ class Citrus {
         return $response;
     }
 
-    private static function build()
+    private static function build($array)
     {
         $data = array();
-
-        $array = func_get_arg(0);
 
         foreach ($array as $index => $value) {
 
@@ -31,8 +29,26 @@ class Citrus {
 
     public static function combine()
     {
-        $arg = func_get_arg(0);
-        $data = Citrus::build($arg);
+        $data = array();
+ 
+        $args = func_num_args();
+ 
+        $argDecider = 0;
+ 
+        $argDecider_ = 1;
+
+        for ($i=0; $i < $args/2; $i++) { 
+            
+            $index = func_get_arg($argDecider);
+            $object = func_get_arg($argDecider_);
+
+            $array[$index] = $object;
+
+            $argDecider_ = $argDecider_ + 2;
+            $argDecider = $argDecider + 2;
+         }
+ 
+        $data = Citrus::build($array);
         $response = Citrus::response(1, null, $data);
         return $response;
     }

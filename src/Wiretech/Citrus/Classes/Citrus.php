@@ -4,15 +4,17 @@ namespace Wiretech\Citrus\Classes;
 
 class Citrus {
 
+    protected $cache;
+
     public static function response($success = 0, $error = 'An unkown error occured', $data = null)
     {
 
         $response['succes'] = $success;
         $response['error'] = $error;
-        $response['cache'] = null;
+        $response['cache'] = \Config::get('citrus::cache');
         $response['data'] = $data;
 
-        return json_encode($response);
+        return $response;
     }
 
     private static function build($array)

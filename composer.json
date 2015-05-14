@@ -7,6 +7,9 @@
             "email": "noah.gansallo@gmail.com"
         }
     ],
+    "suggest": {
+        "cartalyst/sentry": "Interact with $user objects with more ease and fluidity"
+    },
     "homepage": "http://wiretech.github.io/",
     "time": "2015-05-08",
     "license":"MIT",
@@ -20,7 +23,8 @@
             "src/migrations"
         ],
         "psr-0": {
-            "Wiretech\\Citrus\\": "src/"
+            "Wiretech\\Citrus\\": "src/",
+            "Wiretech\\Citrus\\Config\\": "src/config"
         }
     },
     "minimum-stability": "stable"

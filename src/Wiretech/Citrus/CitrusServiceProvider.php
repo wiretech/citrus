@@ -32,6 +32,8 @@ class CitrusServiceProvider extends ServiceProvider {
         {
             return new \Wiretech\Citrus\Classes\Citrus;
         });
+
+        $this->app['config']->package('wiretech/citrus', 'Wiretech\Citrus\Config');
 	}
 
 	/**

@@ -1,6 +1,7 @@
 <?php
 
 namespace Wiretech\Citrus\Config;
+
 //If you're using Sentry, it will look like \Sentry::getUser() instead of \Auth::user
 $user = \Auth::user();
 

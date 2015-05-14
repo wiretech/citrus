@@ -1,7 +1,9 @@
 <?php
 
 namespace Wiretech\Citrus\Config;
+//If you're using Sentry, it will look like \Sentry::getUser() instead of \Auth::user
 $user = \Auth::user();
+
 return array(
 	/*
 	|--------------------------------------------------------------------------
@@ -13,5 +15,7 @@ return array(
 	| If you don't want to use the cache system, make sure you set it to null
 	|
 	*/
-	'cache' => $user
+	'cache' => array(
+		'user' => $user
+		)
 	);

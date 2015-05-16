@@ -43,6 +43,7 @@ class Citrus {
             $object = func_get_arg($argDecider + 1);
 
             $array[$index] = $object;
+            
             $argDecider = $argDecider + 2;
          }
  

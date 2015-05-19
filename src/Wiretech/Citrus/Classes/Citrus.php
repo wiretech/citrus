@@ -9,7 +9,7 @@ class Citrus {
     public static function response($success = 0, $error = 'An unkown error occured', $data = null)
     {
 
-        $response['succes'] = $success;
+        $response['success'] = $success;
         $response['error'] = $error;
         $response['cache'] = \Config::get('citrus::cache');
         $response['data'] = $data;

@@ -47,7 +47,7 @@ class Citrus {
  
         $data = Citrus::build($array);
         $response = Citrus::response(1, null, $data);
-        return json_encode($response);
+        return $response;
     }
 
 

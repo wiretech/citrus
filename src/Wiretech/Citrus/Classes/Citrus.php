@@ -12,7 +12,7 @@ class Citrus {
         //$response['cache'] = \Config::get('citrus::cache');
         $response['data'] = $data;        
 
-        return $response;
+        return json_encode($response);
     }
 
     private static function build($array)
@@ -47,7 +47,7 @@ class Citrus {
  
         $data = Citrus::build($array);
         $response = Citrus::response(1, null, $data);
-        return $response;
+        return json_encode($response);
     }
 
 

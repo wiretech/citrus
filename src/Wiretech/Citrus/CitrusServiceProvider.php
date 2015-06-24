@@ -1,4 +1,5 @@
-<?php namespace Wiretech\Citrus;
+<?php 
+namespace Wiretech\Citrus;
 
 use Illuminate\Support\ServiceProvider;
 

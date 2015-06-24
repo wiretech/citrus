@@ -7,13 +7,10 @@
             "email": "noah.gansallo@gmail.com"
         }
     ],
-    "suggest": {
-        "cartalyst/sentry": "Interact with $user objects with more ease and fluidity"
-    },
     "homepage": "http://wiretech.github.io/",
     "time": "2015-05-08",
     "license":"MIT",
-    "version": "v1.1.1",
+    "version": "v1.0.1",
     "require": {
         "php": ">=5.4.0",
         "illuminate/support": "4.2.*"

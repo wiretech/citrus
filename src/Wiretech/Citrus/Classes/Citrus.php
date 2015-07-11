@@ -54,14 +54,14 @@ class Citrus {
     }
 
 
-    private function success($citrus, $data = null, $http = 200)
+    private function success($citrus, $data = null)
     {
         $citrus->success = 'data';
         $citrus->data = $data;
         return json_encode($citrus);
     }
 
-    private function error($citrus, $e)
+    private function error($citrus, $e,  $http = 200)
     {
         $citrus->success = 'error';
         $citrus->error = $e->getMessage();

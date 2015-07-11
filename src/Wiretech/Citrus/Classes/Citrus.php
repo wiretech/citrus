@@ -54,7 +54,7 @@ class Citrus {
     }
 
 
-    private function success($citrus, $data = null)
+    private function success($citrus, $data = null, $http = 200)
     {
         $citrus->success = 'data';
         $citrus->data = $data;
@@ -65,7 +65,6 @@ class Citrus {
     {
         $citrus->success = 'error';
         $citrus->error = $e->getMessage();
-        $citrus->http = $http;
         return json_encode($citrus);
     }
 

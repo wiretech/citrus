@@ -3,17 +3,46 @@ namespace Wiretech\Citrus\Classes;
 
 class Citrus {
 
-    protected $cache;
-
-    public static function response($success = 0, $error = 'An unkown error occured', $data = null)
+    /*
+    |----------------------------------------
+    | Construct the Citrus Object
+    |----------------------------------------
+    |
+    */
+    public function __construct()
     {
-        $response['success'] = $success;
-        $response['error'] = $error;
-        //$response['cache'] = \Config::get('citrus::cache');
-        $response['data'] = $data;        
-
-        return json_encode($response);
+        $this->success = null;
     }
+
+    /*
+    |----------------------------------------
+    | The response() function of Citrus
+    |----------------------------------------
+    |
+    | This function initializes a citrus object and sets the success
+    | the success switch to either 'data' or 'error' and can be parsed
+    | like this
+    |
+    |   $data = Citrus::response();
+    |   $key = $data->success;
+    |   $data = $data->$key;
+    |
+    */
+
+    public static function response($success = 'error', $data = null)
+    {
+        $citrus = new Citrus;
+        $citrus->success = $success;
+        $citrus->$success = $data;
+        return json_encode($citrus);
+    }
+
+    /*
+    |----------------------------------------
+    | The build() function for Citrus
+    |----------------------------------------
+    |
+    */
 
     private static function build($array)
     {
@@ -21,12 +50,22 @@ class Citrus {
 
         foreach ($array as $index => $value) {
 
-           $data[$index] = json_decode(json_encode($value), true);
+           $data[$index] = json_decode(json_encode($value));
         }
 
         return $data;
     }
 
+    /*
+    |----------------------------------------
+    | The combine() function for Citrus
+    |----------------------------------------
+    |
+    | This function builds each string argument and object argument pair
+    | into an array and then parses it using response()
+    |
+    */
+    
     public static function combine()
     {
         $data = array();
@@ -43,13 +82,9 @@ class Citrus {
             $array[$index] = $object;
             
             $argDecider = $argDecider + 2;
-         }
- 
+        }
         $data = Citrus::build($array);
-        $response = Citrus::response(1, null, $data);
+        $response = Citrus::response('data', $data);
         return $response;
     }
-
-
-
 }

@@ -9,6 +9,7 @@ class Citrus {
     |----------------------------------------
     |
     */
+
     public function __construct()
     {
         $this->success = null;

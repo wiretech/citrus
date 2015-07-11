@@ -13,6 +13,7 @@ class Citrus {
     public function __construct()
     {
         $this->success = null;
+        $this->http = 200;
     }
 
     /*
@@ -33,8 +34,38 @@ class Citrus {
     public static function response($success = 'error', $data = null)
     {
         $citrus = new Citrus;
-        $citrus->success = $success;
-        $citrus->$success = $data;
+
+        if ($success == 'data') {
+
+            $data = $citrus->success($citrus, $data);
+            return $data;
+
+        } elseif ($success == 'error') {
+
+            $data = $citrus->error($citrus, $data);
+            return $data;
+
+        } else {
+            $citrus->success = $success;
+            $citrus->$success = $data;
+            return json_encode($citrus);
+        }
+        
+    }
+
+
+    private function success($citrus, $data = null)
+    {
+        $citrus->success = 'data';
+        $citrus->data = $data;
+        return json_encode($citrus);
+    }
+
+    private function error($citrus, $e, $http = 200)
+    {
+        $citrus->success = 'error';
+        $citrus->error = $e->getMessage();
+        $citrus->http = $http;
         return json_encode($citrus);
     }
 

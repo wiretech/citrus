@@ -64,7 +64,12 @@ class Citrus {
     private function error($citrus, $e,  $http = 200)
     {
         $citrus->success = 'error';
-        $citrus->error = $e->getMessage();
+
+        if (is_object($e)) {
+            $citrus->error = $e->getMessage();
+        } else{
+            $citrus->error = 'An unknown error occurred';
+        }
         return json_encode($citrus);
     }
 
